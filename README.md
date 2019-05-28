@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.org/dagostinoips/TPBingo2019.svg?branch=master)](https://travis-ci.org/dagostinoips/TPBingo2019)
 
 ![Selection_497](https://user-images.githubusercontent.com/14078528/58498174-e1148d80-8153-11e9-9c45-626c9a33858f.png)
-
+[![Build Status](https://travis-ci.org/NielsenMax/TPBingo2019.svg?branch=master)](https://travis-ci.org/NielsenMax/TPBingo2019)
 ## Consignas
 
 ### Escribir un informe respondiendo a las siguientes preguntas:
