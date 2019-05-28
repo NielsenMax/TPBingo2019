@@ -25,7 +25,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
    */
   public function testCincoNumerosPorFila() {
     $carton = new CartonEjemplo;
-    foreach($this->filas() as $fila){
+    foreach($carton->filas() as $fila){
       $numeros = 0;
       foreach($fila as $celda){
         if($celda != 0){
