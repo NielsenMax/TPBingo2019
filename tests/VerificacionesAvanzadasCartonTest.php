@@ -7,9 +7,16 @@ use PHPUnit\Framework\TestCase;
 class VerificacionesAvanzadasCartonTest extends TestCase {
 
   /**
-   * Verifica que los números del carton se encuentren en el rango 1 a 90.a
+   * Verifica que los números del carton se encuentren en el rango 1 a 90.
    */
   public function testUnoANoventa() {
+    $carton = new CartonEjemplo;
+    $numeros = $carton->numerosDelCarton();
+    foreach($numeros as $numero){
+      if($numero < 1 && $numero > 99){
+        $this->assertTrue(FALSE);
+      }
+    }
     $this->assertTrue(TRUE);
   }
 
