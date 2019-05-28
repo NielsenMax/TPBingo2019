@@ -13,7 +13,7 @@ class VerificacionesAvanzadasCartonTest extends TestCase {
     $carton = new CartonEjemplo;
     $numeros = $carton->numerosDelCarton();
     foreach($numeros as $numero){
-      if($numero < 1 && $numero > 99){
+      if($numero < 1 || $numero > 99){
         $this->assertTrue(FALSE);
       }
     }
