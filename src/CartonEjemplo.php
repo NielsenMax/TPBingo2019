@@ -2,11 +2,12 @@
 
 namespace Bingo;
 
+include "CartonInterface.php";
 /**
  * Este es un Carton de Ejemplo.
  */
 class CartonEjemplo implements CartonInterface {
-
+  //class CartonEjemplo {
   protected $numeros_carton = [];
 
   /**
@@ -24,28 +25,33 @@ class CartonEjemplo implements CartonInterface {
    * {@inheritdoc}
    */
   public function filas() {
-    return [
-      [0, 16, 0, 38, 47, 0, 67, 77, 0],
-      [9, 0, 28, 35, 0, 55, 0, 0, 84],
-      [0, 12, 26, 0, 45, 0, 61, 0, 89],
-    ];
+    return $this->numeros_carton;
   }
 
   /**
    * {@inheritdoc}
    */
   public function columnas() {
-    return [
-      [0,9,0],
-      [16,0,12],
-      [0,28,26],
-      [38,35,0],
-      [47,0,45],
-      [0,55,0],
-      [67,0,61],
-      [77,0,0],
-      [0,84,89],
-    ];
+    //return [
+    //  [0,9,0],
+    //  [16,0,12],
+    //  [0,28,26],
+    //  [38,35,0],
+    //  [47,0,45],
+    //  [0,55,0],
+    //  [67,0,61],
+    //  [77,0,0],
+    //  [0,84,89],
+    //];
+    
+    $columnas= Array(Array());
+    for($i=0;$i<3;$i++)
+    {
+      for($j=0;$j<9;$j++){
+        $columnas[$j][$i]=$this->numeros_carton[$i][$j];
+      }
+    }
+    return $columnas;
   }
 
   /**
@@ -71,3 +77,4 @@ class CartonEjemplo implements CartonInterface {
   }
 
 }
+?>
