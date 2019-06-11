@@ -21,7 +21,15 @@ class Carton implements CartonInterface {
    * {@inheritdoc}
    */
   public function filas() {
-    return $this->numeros_carton;
+    //return $this->numeros_carton;
+    $columnas= Array(Array());
+    for($i=0;$i<3;$i++)
+    {
+      for($j=0;$j<9;$j++){
+        $columnas[$i][$j]=$this->numeros_carton[$j][$i];
+      }
+    }
+    return $columnas;
   }
 
   /**
@@ -29,14 +37,15 @@ class Carton implements CartonInterface {
    */
   public function columnas() {
     
-    $columnas= Array(Array());
+    /*$columnas= Array(Array());
     for($i=0;$i<3;$i++)
     {
       for($j=0;$j<9;$j++){
         $columnas[$j][$i]=$this->numeros_carton[$i][$j];
       }
     }
-    return $columnas;
+    return $columnas;*/
+    return $this->numeros_carton;
   }
 
   /**

@@ -96,7 +96,9 @@ class FabricaCartones {
       }          
     }
     if($unacelda == 3)
-    {return TRUE;}
+    {
+        return TRUE;
+    }
     else{return FALSE;}
   }
   protected function validarNumerosIncrementales($carton) {
@@ -129,7 +131,7 @@ class FabricaCartones {
           {
             $numeros=0;
           }
-            if($numeros > 3)
+            if($numeros > 2)
             {return FALSE;}
          
         }        
