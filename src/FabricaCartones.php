@@ -5,7 +5,6 @@ class FabricaCartones {
     // Algo de pseudo-código para ayudar con la evaluacion.
     while(TRUE){
     $carton =new Carton($this->intentoCarton());
-
     if ($this->cartonEsValido($carton)) {
       return $carton;
     }
