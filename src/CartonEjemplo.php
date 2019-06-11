@@ -2,7 +2,7 @@
 
 namespace Bingo;
 
-include "CartonInterface.php";
+include_once "CartonInterface.php";
 /**
  * Este es un Carton de Ejemplo.
  */

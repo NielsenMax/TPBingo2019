@@ -2,27 +2,19 @@
 namespace Bingo;
 class FabricaCartones {
   public function generarCarton() {
-      $bul=TRUE;
-      $i=0;
     // Algo de pseudo-código para ayudar con la evaluacion.
-   while($bul)
-    {
-    while ($i<5){
-    $carton = new Carton($this->intentoCarton());
-        
-    if ($this->cartonEsValido($carton)) {
-      $bul=FALSE;
-        return $carton;
+    while(TRUE){
+    $carton =new Carton($this->intentoCarton());
 
+    if ($this->cartonEsValido($carton)) {
+      return $carton;
     }
-    else{$i=$i+1;}
-    }
-    $bul=FALSE;
-    return $carton;
-  }
 }
+}
+
   
   protected function cartonEsValido($carton) {
+      
     if (
         $this->validarUnoANoventa($carton) &&
         $this->validarCincoNumerosPorFila($carton) &&
@@ -76,7 +68,6 @@ class FabricaCartones {
   protected function validarColumnaCompleta($carton) {
     foreach($carton->columnas() as $columna){
         $numeros = 0;
-        $bul=TRUE;
         foreach($columna as $celda){
           if($celda != 0){
             $numeros++;

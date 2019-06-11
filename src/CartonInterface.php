@@ -26,6 +26,5 @@ interface CartonInterface {
   /**
    * Devuleve TRUE si el numero indicado es parte del carton.
    */
-  public function tieneNumero(int $numero);
 
 }
