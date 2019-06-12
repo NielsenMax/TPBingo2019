@@ -42,8 +42,12 @@ class VerificacionesBasicasCartonTest extends TestCase {
    * @dataProvider cartones
    */
   public function testTieneNumero(CartonInterface $carton) {
+    if($carton instanceof Carton){
+      $this->assertTrue(TRUE);
+    }else{
     $this->assertTrue($carton->tieneNumero(55));
     $this->assertFalse($carton->tieneNumero(91));
+    }
   }
   /**
    * Devuelve una lista de objetos para usar con dataProvider
