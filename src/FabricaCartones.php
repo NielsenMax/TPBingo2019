@@ -13,7 +13,16 @@ class FabricaCartones {
 
   
   protected function cartonEsValido($carton) {
-      
+        /*debugging
+        echo "\n\nNuevo Carton \n";
+        if($this->validarUnoANoventa($carton)             ){echo "Funciono 1 \n";}else{echo "No 1 \n";}
+        if($this->validarCincoNumerosPorFila($carton)     ){echo "Funciono 2 \n";}else{echo "No 2\n";}
+        if($this->validarColumnaNoVacia($carton)          ){echo "Funciono 3\n";}else{echo "No 3\n";}
+        if($this->validarColumnaCompleta($carton)         ){echo "Funciono 4\n";}else{echo "No 4\n";} 
+        if($this->validarTresCeldasIndividuales($carton)  ){echo "Funciono 5\n";}else{echo "No 5\n";}
+        if($this->validarNumerosIncrementales($carton)    ){echo "Funciono 6\n";}else{echo "No 6\n";}
+        if($this->validarFilasConVaciosUniformes($carton) ){echo "Funciono 7\n";}else{echo "No 7\n";}   
+        //enddebugging*/
     if (
         $this->validarUnoANoventa($carton) &&
         $this->validarCincoNumerosPorFila($carton) &&
@@ -66,19 +75,12 @@ class FabricaCartones {
   }
   protected function validarColumnaCompleta($carton) {
     foreach($carton->columnas() as $columna){
-        $numeros = 0;
-        foreach($columna as $celda){
-          if($celda != 0){
-            $numeros++;
-          }
+        if(count(array_filter($columna)) == 3){
+          return FALSE;
+        }else{
+          return TRUE;
         }
-            if($numeros == 3);
-            {
-                return false;
-            }
-            
-      }
-      return TRUE;
+    }
   }
   protected function validarTresCeldasIndividuales($carton) {
     $unacelda=0;
